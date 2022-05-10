@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/hack/static/css/main.153f18a8.css",
+    "main.js": "/hack/static/js/main.a3ed0eb3.js",
+    "static/media/girly.gif": "/hack/static/media/girly.6e9f3f896549f764507f.gif",
+    "static/media/journal.png": "/hack/static/media/journal.a2d132aff02a202edd76.png",
+    "static/media/therapist.jpg": "/hack/static/media/therapist.225542c4ee3a047e96c8.jpg",
+    "static/media/spbuk.png": "/hack/static/media/spbuk.b8886099dfd92806d79b.png",
+    "static/media/ical.jpg": "/hack/static/media/ical.33f68edd79afc63a00cb.jpg",
+    "static/media/logo.png": "/hack/static/media/logo.ec52f54b136abfe1d6c1.png",
+    "static/media/van.png": "/hack/static/media/van.a7827ab16fbba2604369.png",
+    "static/media/trevor.png": "/hack/static/media/trevor.01cfa36cd406edf4b11d.png",
+    "static/media/ctl.jpg": "/hack/static/media/ctl.00fd187ee85bc84337d6.jpg",
+    "static/media/sam.png": "/hack/static/media/sam.5ff0a3547dfba2959dc4.png",
+    "static/media/smhc.png": "/hack/static/media/smhc.1bd3dfadbc94100c3957.png",
+    "static/media/smh.jpg": "/hack/static/media/smh.7ef3cb8f9c5c195eed55.jpg",
+    "static/media/trns.png": "/hack/static/media/trns.7acfdac48552493eee49.png",
+    "index.html": "/hack/index.html",
+    "main.153f18a8.css.map": "/hack/static/css/main.153f18a8.css.map",
+    "main.a3ed0eb3.js.map": "/hack/static/js/main.a3ed0eb3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.153f18a8.css",
+    "static/js/main.a3ed0eb3.js"
+  ]
+}
