@@ -1,46 +1,53 @@
 import { Container, Flex, Spinner, VStack } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
+import db from '../lib/firebase'
+import { getFirestore, collection, getDocs ,doc} from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js';
 import Navbar from "../community/navbar-comm";
 import Post from "../community/Post";
-import db from "../lib/firebase";
-import '../community/comm.css'
+import '../community/comm.css';
+
+
+
+
+
+
+
 
 const Community = () => {
-  const [posts, setPosts] = useState([]);
+  let [posts, setPosts] = useState([]);
   const [isLoading, setLoading] = useState(true);
+  
+ 
 
+  let post1 = [];
   useEffect(() => {
-
-    db.collection("posts")
-      .orderBy("createdAt", "desc")
-      .get()
-      .then((querySnapshot) => {
-        const data = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-
-        setPosts(data);
-        setLoading(false);
-        console.log(posts)
-      });
-  }, []);
-
+    getDocs(collection(db, "posts")).then((snapshot) => {
+    const data = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      post1 = data;
+      setPosts(post1);
+      setLoading(false);
+    })
+  }, [posts]);
+  
+  const _posts = [];
   useEffect(() => {
-    db.collection("posts")
-      .orderBy("createdAt", "desc")
-      .onSnapshot((querySnapshot) => {
-        const _posts = [];
-
-        querySnapshot.forEach((doc) => {
-          _posts.push({
+    getDocs(collection(db, "posts")).then((snapshot)=>
+    {
+      
+      snapshot.docs.forEach((doc)=>
+      {
+        _posts.push(
+          {
             id: doc.id,
             ...doc.data(),
-          });
-        });
-
-        setPosts(_posts);
-      });
+          }
+        )
+      })
+      setPosts(_posts);
+    })
   }, []);
 
   if (isLoading) {

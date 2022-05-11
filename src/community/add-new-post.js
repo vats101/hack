@@ -16,6 +16,8 @@ import {
   import React, { useState } from "react";
   import db from "../lib/firebase";
   import './comm.css'
+  
+import { addDoc,getFirestore, collection, getDocs,updateDoc } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js';
 import post from "./Post";
   
   const AddNewPost = () => {
@@ -44,13 +46,13 @@ import post from "./Post";
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [title, setTitle] = useState("");
     const [isSaving, setSaving] = useState(false);
-    
+    const postRef=collection(db,"posts");
     const handleSubmit = async () => {
       let check=1;
       swear.map(word => {
         if(title.toLowerCase().includes(word) === true )
         {
-          check=0
+          check=0;
           console.log(`Bad word found ${title}`) ;
         }  
       })
@@ -60,7 +62,8 @@ import post from "./Post";
   
       const date = new Date();
       console.log(localStorage.getItem('Name'));
-      await db.collection("posts").add({
+      
+      addDoc(postRef,{
         user:localStorage.getItem('Name'),
         title: title,
         comment:[],

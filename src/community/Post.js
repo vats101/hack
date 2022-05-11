@@ -6,8 +6,10 @@ import db from "../lib/firebase";
 import {useState} from 'react'
 import './comm.css'
 import AddNewComment from "./add-new-comment";
+import { addDoc,getFirestore, collection, getDocs,updateDoc ,doc} from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js';
 
 const Post = (props) => {
+  
    useEffect(()=>{
      
    },[props.post.isCommentVisible])
@@ -17,6 +19,7 @@ const Post = (props) => {
     props.posts.map((post)=>{
       if(post.id==id)
       {
+        const postRef=doc(db,"posts",post.id);
        if(post.isCommentVisible==false)
        {
          post.isCommentVisible=true;
@@ -27,7 +30,7 @@ const Post = (props) => {
        }
          
          console.log( post.isCommentVisible)
-       db.collection("posts").doc(id).set(post);
+         updateDoc(postRef,post);
       }
     })
 

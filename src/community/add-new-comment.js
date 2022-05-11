@@ -16,6 +16,7 @@ import {
   import React, { useState , useEffect} from "react";
   import db from "../lib/firebase";
   import './comm.css'
+  import { addDoc,getFirestore, collection, getDocs,updateDoc,doc } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js';
 import post from "./Post";
 
   
@@ -69,7 +70,9 @@ import post from "./Post";
         console.log(temppost)
         temppost.push(txt);
         //getting posts
-        await db.collection("posts").doc(post.id).set({
+        const docRef=doc(db,"posts",post.id);
+        console.log(docRef);
+        updateDoc(docRef,{
           user:localStorage.getItem('Name'),
           title: post.title,
           comment:temppost ,
@@ -77,7 +80,7 @@ import post from "./Post";
           downVotesCount: 0,
           createdAt: post.createdAt,
           updatedAt: date.toUTCString(),
-          isCommentVisible:"false"
+          isCommentVisible:false
         });
       }
       else

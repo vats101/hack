@@ -1,21 +1,19 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
-
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js';
+import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js';
+import { getAuth } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-auth.js';
 const firebaseConfig = {
-  apiKey: "AIzaSyDnlMrQhsgQHITTobZAWd-nwg_RDRdlnqg",
-  authDomain: "aisha-community.firebaseapp.com",
-  projectId: "aisha-community",
-  storageBucket: "aisha-community.appspot.com",
-  messagingSenderId: "954126646799",
-  appId: "1:954126646799:web:ec09671946c124bec4ad7a",
-  measurementId: "G-ZNYZT99V96"
+  apiKey: "AIzaSyB_qETxhqyoLkZMp0RmprNOGbTBxy4Mt6E",
+  authDomain: "artifexers.firebaseapp.com",
+  projectId: "artifexers",
+  storageBucket: "artifexers.appspot.com",
+  messagingSenderId: "1003653458105",
+  appId: "1:1003653458105:web:b36786c756838afe731368"
 };
+
 // Use this to initialize the firebase App
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 // Use these for db & auth
-const db = firebaseApp.firestore();
-const auth = firebase.auth();
-
+const db = getFirestore(app);
+const auth = getAuth(app);
 export default db;
