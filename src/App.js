@@ -18,8 +18,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' exact element={<><Homepage username={userName} setusername={setUserName} /></>}></Route>
-        <Route path='/hack' exact element={<><Homepage username={userName} setusername={setUserName} /></>}></Route>
         <Route path='/hack/' exact element={<><Homepage username={userName} setusername={setUserName} /></>}></Route>
+        <Route path='/hack' exact element={<><Homepage username={userName} setusername={setUserName} /></>}></Route>
         <Route path='/home' exact element={<><Homepage/></>}></Route>
         <Route path='/mainpage' exact element={<><Navbar/><Mainpage/><Footer/></>}></Route>
         <Route path='/about' exact element={<><Navbar/><About/><Footer/></>}></Route>
