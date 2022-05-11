@@ -1,7 +1,8 @@
 import { Container, Flex, Spinner, VStack } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import db from '../lib/firebase'
-import { getFirestore, collection, getDocs ,doc} from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js';
+import { getFirestore, collection, getDocs ,doc} from 'firebase/firestore/lite'
+// import { getFirestore, collection, getDocs ,doc} from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js';
 import Navbar from "../community/navbar-comm";
 import Post from "../community/Post";
 import '../community/comm.css';

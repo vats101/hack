@@ -16,7 +16,8 @@ import {
   import React, { useState , useEffect} from "react";
   import db from "../lib/firebase";
   import './comm.css'
-  import { addDoc,getFirestore, collection, getDocs,updateDoc,doc } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js';
+  import { getFirestore, collection, getDocs ,doc,addDoc,updateDoc} from 'firebase/firestore/lite'
+  // import { addDoc,getFirestore, collection, getDocs,updateDoc,doc } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js';
 import post from "./Post";
 
   

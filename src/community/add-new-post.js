@@ -17,7 +17,8 @@ import {
   import db from "../lib/firebase";
   import './comm.css'
   
-import { addDoc,getFirestore, collection, getDocs,updateDoc } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js';
+// import { addDoc,getFirestore, collection, getDocs,updateDoc } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js';
+import { getFirestore, collection,addDoc,getDocs,updateDoc } from 'firebase/firestore/lite'
 import post from "./Post";
   
   const AddNewPost = () => {
