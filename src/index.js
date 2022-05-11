@@ -12,7 +12,7 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <ChakraProvider>
-    <Router>
+    <Router basename =''>
     <App />
     </Router>
     </ChakraProvider>
